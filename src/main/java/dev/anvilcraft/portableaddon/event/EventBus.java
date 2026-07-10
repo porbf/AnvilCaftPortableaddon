@@ -1,8 +1,10 @@
-package dev.anvilcraft.portableaddon;
+package dev.anvilcraft.portableaddon.event;
 
-import dev.anvilcraft.portableaddon.Packet.DoubleJumpPacket;
-import dev.anvilcraft.portableaddon.Packet.DoubleWalk;
-import dev.anvilcraft.portableaddon.Packet.ResetDoubleJumpPacket;
+import dev.anvilcraft.portableaddon.network.DoubleJumpPacket;
+import dev.anvilcraft.portableaddon.network.DoubleWalk;
+import dev.anvilcraft.portableaddon.network.ResetDoubleJumpPacket;
+import dev.anvilcraft.portableaddon.enchantment.EnchantmentEffects;
+import dev.anvilcraft.portableaddon.init.DataComponents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.item.ItemStack;

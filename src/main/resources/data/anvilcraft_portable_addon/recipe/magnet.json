@@ -5,5 +5,5 @@
     "#": { "item": "anvilcraft:hollow_magnet_block" },
     "X": { "item": "minecraft:stick" }
   },
-  "result": { "id": "anvilcraftportableaddon:magnet", "count": 1 }
+  "result": { "id": "anvilcraft_portable_addon:magnet", "count": 1 }
 }

@@ -1,7 +1,7 @@
-package dev.anvilcraft.portableaddon.Packet;
+package dev.anvilcraft.portableaddon.network;
 
-import dev.anvilcraft.portableaddon.anvilcraftportableaddon;
-import dev.anvilcraft.portableaddon.EnchantmentEffects;
+import dev.anvilcraft.portableaddon.AnvilcraftPortableAddon;
+import dev.anvilcraft.portableaddon.enchantment.EnchantmentEffects;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
@@ -13,7 +13,7 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 import org.jetbrains.annotations.NotNull;
 
 public record DoubleWalk() implements CustomPacketPayload {
-    public static final Type<DoubleWalk> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(anvilcraftportableaddon.MODID, "double_walk"));
+    public static final Type<DoubleWalk> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(AnvilcraftPortableAddon.MOD_ID, "double_walk"));
     public static final StreamCodec<FriendlyByteBuf, DoubleWalk> CODEC = StreamCodec.unit(new DoubleWalk());
 
     @Override

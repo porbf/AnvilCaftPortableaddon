@@ -1,7 +1,7 @@
 {
 	"variants": {
 		"": {
-			"model": "anvilcraftportableaddon:block/power_block"
+			"model": "anvilcraft_portable_addon:block/power_block"
 		}
 	}
 }

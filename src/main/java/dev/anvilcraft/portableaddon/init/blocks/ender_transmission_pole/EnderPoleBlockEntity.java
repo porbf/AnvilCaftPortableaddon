@@ -1,6 +1,7 @@
-package dev.anvilcraft.portableaddon.block.blocks.ender_transmission_pole;
+package dev.anvilcraft.portableaddon.init.blocks.ender_transmission_pole;
 
-import dev.anvilcraft.portableaddon.block.ModBlockEntity;
+import dev.anvilcraft.portableaddon.init.AddonBlocks;
+import dev.anvilcraft.portableaddon.init.blocks.ender_transmission_pole.EnderPoleBlock;
 import dev.dubhe.anvilcraft.api.power.IPowerTransmitter;
 import dev.dubhe.anvilcraft.api.power.PowerComponentType;
 import dev.dubhe.anvilcraft.api.power.PowerGrid;
@@ -39,7 +40,7 @@ public class EnderPoleBlockEntity extends BlockEntity implements IPowerTransmitt
 
     // --- 构造函数与工厂方法 ---
     public EnderPoleBlockEntity(BlockPos pos, BlockState blockState) {
-        super(ModBlockEntity.ENDER_POLE_ENTITY.get(), pos, blockState);
+        super(AddonBlocks.ENDER_POLE_ENTITY.get(), pos, blockState);
     }
 
     // --- 基础接口实现 ---

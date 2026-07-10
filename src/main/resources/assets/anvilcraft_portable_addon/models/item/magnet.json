@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "anvilcraftportableaddon:item/magnet"
+		"layer0": "anvilcraft_portable_addon:item/magnet"
 	},
 	"display": {
 		"thirdperson_righthand": {

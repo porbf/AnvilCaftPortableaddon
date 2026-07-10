@@ -1,8 +1,8 @@
 package dev.anvilcraft.portableaddon;
 
-import dev.anvilcraft.lib.config.BoundedDiscrete;
-import dev.anvilcraft.lib.config.Comment;
-import dev.anvilcraft.lib.config.Config;
+import dev.anvilcraft.lib.v2.config.BoundedDiscrete;
+import dev.anvilcraft.lib.v2.config.Comment;
+import dev.anvilcraft.lib.v2.config.Config;
 
 @Config(name = AnvilcraftPortableAddon.MOD_ID)
 public class AddonConfig {

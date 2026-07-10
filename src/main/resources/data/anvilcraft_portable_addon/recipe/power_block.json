@@ -6,5 +6,5 @@
     "X": { "item": "anvilcraft:induction_light" },
     "R": { "item": "minecraft:iron_ingot" }
   },
-  "result": { "id": "anvilcraftportableaddon:power_block", "count": 1 }
+  "result": { "id": "anvilcraft_portable_addon:power_block", "count": 1 }
 }

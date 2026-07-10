@@ -1,8 +1,8 @@
 package dev.anvilcraft.portableaddon.init;
 
 import dev.anvilcraft.portableaddon.AnvilcraftPortableAddon;
-import dev.anvilcraft.portableaddon.block.blocks.ender_transmission_pole.EnderPoleBlock;
-import dev.anvilcraft.portableaddon.block.blocks.ender_transmission_pole.EnderPoleBlockEntity;
+import dev.anvilcraft.portableaddon.init.blocks.ender_transmission_pole.EnderPoleBlock;
+import dev.anvilcraft.portableaddon.init.blocks.ender_transmission_pole.EnderPoleBlockEntity;
 import dev.dubhe.anvilcraft.block.state.Vertical3PartHalf;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -105,7 +105,7 @@ public class AddonItems {
     // 核心行为：既是电线杆的放置物，同时也是多方块结构的跨维度无线连线配置工具
     // ==========================================
     public static final DeferredItem<BlockItem> ENDERPOLE_ITEM =
-            ITEMS.register("enderpole", () -> new BlockItem(ModBlocks.ENDERPOLE.get(), new Item.Properties()) {
+            ITEMS.register("enderpole", () -> new BlockItem(AddonBlocks.ENDERPOLE.get(), new Item.Properties()) {
 
                 @Override
                 public InteractionResult useOn(UseOnContext context) {
@@ -155,7 +155,7 @@ public class AddonItems {
     // 快捷将常规方块转换为对应 BlockItem 的简易注册
     // ==========================================
     public static final DeferredItem<BlockItem> POWER_BLOCK_ITEM =
-            ITEMS.registerSimpleBlockItem("power_block", ModBlocks.POWER_BLOCK);
+            ITEMS.registerSimpleBlockItem("power_block", AddonBlocks.POWER_BLOCK);
 
 
     /**

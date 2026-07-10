@@ -4,7 +4,11 @@ dependencies {
 
     // Anvil Lib
     implementation(libs.anvillib)
-    interfaceInjectionData(libs.anvillib)
+    // Note: anvillib 2.0.0 doesn't provide the 'interfaceinjection' Gradle variant
+    // interfaceInjectionData(libs.anvillib) — removed to avoid variant mismatch
+
+    // AnvilLib sub-modules (for compilation; at runtime they come from anvilcraft's Jar-in-Jar)
+    implementation(libs.anvillibConfig)
 
     // AnvilCraft
     implementation(libs.anvilcraft) { transitive = false }

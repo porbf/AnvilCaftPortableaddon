@@ -1,6 +1,6 @@
-package dev.anvilcraft.portableaddon.block.blocks.PowerBlock;
+package dev.anvilcraft.portableaddon.init.blocks.PowerBlock;
 
-import dev.anvilcraft.portableaddon.block.ModBlockEntity;
+import dev.anvilcraft.portableaddon.init.AddonBlocks;
 import dev.dubhe.anvilcraft.api.power.IPowerProducer;
 import dev.dubhe.anvilcraft.api.power.PowerComponentType;
 import dev.dubhe.anvilcraft.api.power.PowerGrid;
@@ -16,7 +16,7 @@ public class PowerBlockEntity extends BlockEntity implements IPowerProducer {
     @Nullable
     private PowerGrid grid = null;
     public PowerBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntity.APOWER_BE.get(), pos, state);
+        super(AddonBlocks.APOWER_BE.get(), pos, state);
     }
     @Override public int getOutputPower() { return 1; }
     @Override public @NotNull PowerComponentType getComponentType() { return PowerComponentType.PRODUCER; }

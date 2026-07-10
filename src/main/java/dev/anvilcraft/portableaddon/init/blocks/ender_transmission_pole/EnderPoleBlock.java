@@ -1,11 +1,11 @@
-package dev.anvilcraft.portableaddon.block.blocks.ender_transmission_pole;
+package dev.anvilcraft.portableaddon.init.blocks.ender_transmission_pole;
 
-import dev.anvilcraft.portableaddon.block.ModBlocks;
-import com.sun.jna.platform.unix.solaris.LibKstat;
+import dev.anvilcraft.portableaddon.init.blocks.ender_transmission_pole.EnderPoleBlockEntity;
 import dev.dubhe.anvilcraft.api.IHasMultiBlock;
 import dev.dubhe.anvilcraft.api.power.IPowerComponent;
 import dev.dubhe.anvilcraft.block.multipart.SimpleMultiPartBlock;
 import dev.dubhe.anvilcraft.block.state.Vertical3PartHalf;
+import dev.anvilcraft.portableaddon.init.AddonBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -135,7 +135,7 @@ public class EnderPoleBlock extends SimpleMultiPartBlock<Vertical3PartHalf> impl
         // 向上获取两格处的“顶部段”方块状态
         BlockPos topPos = pos.above(2);
         BlockState topState = level.getBlockState(topPos);
-        if (!topState.is(ModBlocks.ENDERPOLE.get()) || topState.getValue(PARTHALF) != Vertical3PartHalf.TOP) return;
+        if (!topState.is(AddonBlocks.ENDERPOLE.get()) || topState.getValue(PARTHALF) != Vertical3PartHalf.TOP) return;
 
         // 检查底部是否接收到红石信号
         boolean hasRedstoneSignal = level.hasNeighborSignal(pos);

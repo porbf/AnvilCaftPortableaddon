@@ -1,7 +1,7 @@
-package dev.anvilcraft.portableaddon.Packet;
+package dev.anvilcraft.portableaddon.network;
 
-import dev.anvilcraft.portableaddon.anvilcraftportableaddon;
-import dev.anvilcraft.portableaddon.DataComponents;
+import dev.anvilcraft.portableaddon.AnvilcraftPortableAddon;
+import dev.anvilcraft.portableaddon.init.DataComponents;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.StreamCodec;
@@ -14,7 +14,7 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 //一个网络包，用来重置二段跳
 public record ResetDoubleJumpPacket() implements CustomPacketPayload {
     public static final Type<ResetDoubleJumpPacket> TYPE = new Type<>(
-            ResourceLocation.fromNamespaceAndPath(anvilcraftportableaddon.MODID, "reset_double_jump")
+            ResourceLocation.fromNamespaceAndPath(AnvilcraftPortableAddon.MOD_ID, "reset_double_jump")
     );//注册一个名为reset_double_jump的网络包
     public static final StreamCodec<FriendlyByteBuf, ResetDoubleJumpPacket> CODEC =
             StreamCodec.unit(new ResetDoubleJumpPacket());
