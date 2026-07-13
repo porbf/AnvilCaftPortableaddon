@@ -1,6 +1,6 @@
 dependencies {
-    // Registrate
-    api(libs.registrate)
+    // Registrum (replaces Registrate)
+    api(libs.anvillibRegistrum)
 
     // Anvil Lib
     implementation(libs.anvillib)

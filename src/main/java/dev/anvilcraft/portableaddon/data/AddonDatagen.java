@@ -1,6 +1,6 @@
 package dev.anvilcraft.portableaddon.data;
 
-import com.tterrag.registrate.providers.ProviderType;
+import dev.anvilcraft.lib.v2.registrum.providers.ProviderType;
 import dev.anvilcraft.portableaddon.data.lang.AddonLangHandler;
 
 import static dev.anvilcraft.portableaddon.AnvilcraftPortableAddon.REGISTRATE;

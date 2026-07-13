@@ -1,7 +1,7 @@
 package dev.anvilcraft.portableaddon;
 
 import com.mojang.logging.LogUtils;
-import com.tterrag.registrate.Registrate;
+import dev.anvilcraft.lib.v2.registrum.Registrum;
 import dev.anvilcraft.lib.v2.config.ConfigManager;
 import dev.anvilcraft.portableaddon.enchantment.EnchantmentEffects;
 import dev.anvilcraft.portableaddon.init.AddonBlocks;
@@ -27,7 +27,7 @@ public class AnvilcraftPortableAddon {
     public static final String MOD_ID = "anvilcraft_portable_addon";
     public static final Logger LOGGER = LogUtils.getLogger();
     public static final AddonConfig CONFIG = ConfigManager.register(AnvilcraftPortableAddon.MOD_ID, AddonConfig::new);
-    public static final Registrate REGISTRATE = Registrate.create(MOD_ID);
+    public static final Registrum REGISTRATE = Registrum.create(MOD_ID);
 
     public AnvilcraftPortableAddon(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);

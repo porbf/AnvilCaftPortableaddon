@@ -1,6 +1,6 @@
 package dev.anvilcraft.portableaddon.data.lang;
 
-import com.tterrag.registrate.providers.RegistrateLangProvider;
+import dev.anvilcraft.lib.v2.registrum.providers.RegistrumLangProvider;
 import dev.anvilcraft.portableaddon.AddonConfig;
 import dev.anvilcraft.lib.v2.config.ConfigData;
 
@@ -11,7 +11,7 @@ public class AddonLangHandler {
      *
      * @param provider 提供器
      */
-    public static void init(RegistrateLangProvider provider) {
+    public static void init(RegistrumLangProvider provider) {
         ConfigData.readConfigClass(provider, AddonConfig.class);
     }
 }
