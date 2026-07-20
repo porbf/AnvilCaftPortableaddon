@@ -17,6 +17,7 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 public class AnvilCraftAddonTemplateClient {
     public AnvilCraftAddonTemplateClient(IEventBus modBus, ModContainer container) {
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        modBus.addListener(KeyBindings::onRegisterKeyMappings);
     }
 
     @SubscribeEvent

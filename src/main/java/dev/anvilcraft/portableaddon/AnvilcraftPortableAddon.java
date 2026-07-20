@@ -3,6 +3,7 @@ package dev.anvilcraft.portableaddon;
 import com.mojang.logging.LogUtils;
 import dev.anvilcraft.lib.v2.registrum.Registrum;
 import dev.anvilcraft.lib.v2.config.ConfigManager;
+import dev.anvilcraft.portableaddon.data.AddonDatagen;
 import dev.anvilcraft.portableaddon.enchantment.EnchantmentEffects;
 import dev.anvilcraft.portableaddon.init.AddonBlocks;
 import dev.anvilcraft.portableaddon.init.AddonItemGroups;
@@ -10,7 +11,10 @@ import dev.anvilcraft.portableaddon.init.AddonItems;
 import dev.anvilcraft.portableaddon.init.DataComponents;
 import dev.anvilcraft.portableaddon.network.Packets;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -33,10 +37,10 @@ public class AnvilcraftPortableAddon {
         modEventBus.addListener(this::commonSetup);
         LOGGER.info("Ciallo～(∠・ω< )⌒★");
 
+        AddonDatagen.init();
         AddonItems.register(modEventBus);
         DataComponents.register(modEventBus);
         Packets.init(modEventBus);
-        EnchantmentEffects.register(modEventBus);
         AddonBlocks.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
@@ -61,6 +65,19 @@ public class AnvilcraftPortableAddon {
             event.accept(AddonItems.Magnet);
             event.accept(AddonItems.POWER_BLOCK_ITEM);
             event.accept(AddonItems.ENDERPOLE_ITEM);
+
+            // 雷跃附魔书（可附魔在靴子上，实现二段跳）
+            var holders = event.getParameters().holders();
+            var enchantments = holders.lookupOrThrow(Registries.ENCHANTMENT);
+
+            ItemStack jumpBook = new ItemStack(Items.ENCHANTED_BOOK);
+            jumpBook.enchant(enchantments.getOrThrow(EnchantmentEffects.DOUBLE_JUMP), 1);
+            event.accept(jumpBook);
+
+            // 雷行附魔书（可附魔在护腿上，实现闪现）
+            ItemStack walkBook = new ItemStack(Items.ENCHANTED_BOOK);
+            walkBook.enchant(enchantments.getOrThrow(EnchantmentEffects.DOUBLE_WALK), 1);
+            event.accept(walkBook);
         }
     }
 

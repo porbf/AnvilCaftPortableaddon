@@ -1,14 +1,11 @@
 {
-  "anvilcraft_addon_template.configuration.log_dirt_block": "ʞɔoןᗺ ʇɹıᗡ boꞀ",
-  "anvilcraft_addon_template.configuration.log_dirt_block.tooltip": "dnʇǝs uoɯɯoɔ uo ʞɔoןq ʇɹıp ǝɥʇ boן oʇ ɹǝɥʇǝɥM",
-  "anvilcraft_addon_template.configuration.magic_number": "ɹǝqɯnN ɔıbɐW",
-  "anvilcraft_addon_template.configuration.magic_number.tooltip": "ɹǝqɯnu ɔıbɐɯ Ɐ",
-  "anvilcraft_addon_template.configuration.magic_number_introduction": "uoıʇɔnpoɹʇuI ɹǝqɯnN ɔıbɐW",
-  "anvilcraft_addon_template.configuration.magic_number_introduction.tooltip": "ɹǝqɯnu ɔıbɐɯ ǝɥʇ ɹoɟ ǝq oʇ ǝbɐssǝɯ uoıʇɔnpoɹʇuı ǝɥʇ ʇuɐʍ noʎ ʇɐɥM",
-  "anvilcraft_addon_template.configuration.section.anvilcraft_addon_template.common.toml": "uoıʇɐɹnbıɟuoƆ uoɯɯoƆ ǝʇɐןdɯǝ⟘ uoppⱯ ʇɟɐɹɔןıʌuⱯ",
-  "anvilcraft_addon_template.configuration.section.anvilcraft_addon_template.common.toml.title": "uoıʇɐɹnbıɟuoƆ uoɯɯoƆ ǝʇɐןdɯǝ⟘ uoppⱯ ʇɟɐɹɔןıʌuⱯ",
-  "anvilcraft_addon_template.configuration.title": "uoıʇɐɹnbıɟuoƆ ǝʇɐןdɯǝ⟘ uoppⱯ ʇɟɐɹɔןıʌuⱯ",
-  "block.anvilcraft_addon_template.example_block": "ʞɔoןᗺ ǝןdɯɐxƎ",
-  "item.anvilcraft_addon_template.example_item": "ɯǝʇI ǝןdɯɐxƎ",
-  "itemGroup.anvilcraft_addon_template.addon_items": "ǝʇɐןdɯǝ⟘ uoppⱯ :ʇɟɐɹƆןıʌuⱯ"
+  "anvilcraft_portable_addon.configuration.log_dirt_block": "ʞɔoꞁᗺ ʇɹᴉᗡ ᵷoꞀ",
+  "anvilcraft_portable_addon.configuration.log_dirt_block.tooltip": "dnʇǝs uoɯɯoɔ uo ʞɔoꞁq ʇɹᴉp ǝɥʇ ᵷoꞁ oʇ ɹǝɥʇǝɥM",
+  "anvilcraft_portable_addon.configuration.magic_number": "ɹǝqɯnN ɔᴉᵷɐW",
+  "anvilcraft_portable_addon.configuration.magic_number.tooltip": "ɹǝqɯnu ɔᴉᵷɐɯ Ɐ",
+  "anvilcraft_portable_addon.configuration.magic_number_introduction": "uoᴉʇɔnpoɹʇuI ɹǝqɯnN ɔᴉᵷɐW",
+  "anvilcraft_portable_addon.configuration.magic_number_introduction.tooltip": "ɹǝqɯnu ɔᴉᵷɐɯ ǝɥʇ ɹoɟ ǝq oʇ ǝᵷɐssǝɯ uoᴉʇɔnpoɹʇuᴉ ǝɥʇ ʇuɐʍ noʎ ʇɐɥM",
+  "anvilcraft_portable_addon.configuration.section.anvilcraft_portable_addon.common.toml": "uoᴉʇɐɹnᵷᴉɟuoƆ uoɯɯoƆ uoppⱯ ǝꞁqɐʇɹoԀ ʇɟɐɹɔꞁᴉʌuⱯ",
+  "anvilcraft_portable_addon.configuration.section.anvilcraft_portable_addon.common.toml.title": "uoᴉʇɐɹnᵷᴉɟuoƆ uoɯɯoƆ uoppⱯ ǝꞁqɐʇɹoԀ ʇɟɐɹɔꞁᴉʌuⱯ",
+  "anvilcraft_portable_addon.configuration.title": "uoᴉʇɐɹnᵷᴉɟuoƆ uoppⱯ ǝꞁqɐʇɹoԀ ʇɟɐɹɔꞁᴉʌuⱯ"
 }

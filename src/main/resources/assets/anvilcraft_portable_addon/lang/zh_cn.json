@@ -4,10 +4,13 @@
     "item.anvilcraftportableaddon.magnet.AVONtooltip": "携带了：",
     "item.anvilcraftportableaddon.magnet.AVOFFtooltip": "对铁砧潜行使用以携带铁砧",
     "item.anvilcraftportableaddon.enderpole.tooltip": "已确定父杆，现在可以绑定子杆",
-    "enchantment.anvilcraftportableaddon.double_jump": "雷跃",
-    "enchantment.anvilcraftportableaddon.double_walk": "雷行",
-    "enchantment.anvilcraftportableaddon.double_jump.desc": "在空中按下跳跃可进行二次跳跃",
-    "enchantment.anvilcraftportableaddon.double_walk.desc": "单击奔跑可进行一次冲刺",
+    "enchantment.anvilcraft_portable_addon.double_jump": "雷跃",
+    "enchantment.anvilcraft_portable_addon.double_walk": "雷行",
+    "enchantment.anvilcraft_portable_addon.double_jump.desc": "在空中按下跳跃可进行二次跳跃",
+    "enchantment.anvilcraft_portable_addon.double_walk.desc": "按下闪现键向前突进5格，无法穿过方块",
     "block.anvilcraft_portable_addon.power_block": "能量方块",
-    "block.anvilcraft_portable_addon.ender_pole": "末影输电杆"
+    "block.anvilcraft_portable_addon.ender_pole": "末影输电杆",
+    "key.category.anvilcraftportableaddon": "便携附属",
+    "key.anvilcraftportableaddon.blink": "闪现",
+    "cooldown.anvilcraftportableaddon.blink": "§c⏳ %s秒后可再次使用"
 }

@@ -4,10 +4,13 @@
   "item.anvilcraftportableaddon.magnet.AVONtooltip": "Carrying: ",
   "item.anvilcraftportableaddon.magnet.AVOFFtooltip": "Sneak-use on an anvil to carry it",
   "item.anvilcraftportableaddon.enderpole.tooltip": "Parent pole set. Bind a child pole now.",
-  "enchantment.anvilcraftportableaddon.double_jump": "Double Jump",
-  "enchantment.anvilcraftportableaddon.double_walk": "Double Walk",
-  "enchantment.anvilcraftportableaddon.double_jump.desc": "Press jump in the air to perform a second jump",
-  "enchantment.anvilcraftportableaddon.double_walk.desc": "Press sprint to perform a burst of speed",
+  "enchantment.anvilcraft_portable_addon.double_jump": "Double Jump",
+  "enchantment.anvilcraft_portable_addon.double_walk": "Double Walk",
+  "enchantment.anvilcraft_portable_addon.double_jump.desc": "Press jump in the air to perform a second jump",
+  "enchantment.anvilcraft_portable_addon.double_walk.desc": "Press blink to dash 5 blocks forward, cannot pass through walls",
   "block.anvilcraft_portable_addon.power_block": "Power Block",
-  "block.anvilcraft_portable_addon.ender_pole": "Ender Pole"
+  "block.anvilcraft_portable_addon.ender_pole": "Ender Pole",
+  "key.category.anvilcraftportableaddon": "Portable Addon",
+  "key.anvilcraftportableaddon.blink": "Blink",
+  "cooldown.anvilcraftportableaddon.blink": "§c⏳ %s s"
 }
