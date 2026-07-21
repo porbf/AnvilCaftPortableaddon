@@ -13,6 +13,7 @@ public class Packets {
         registrar.playToServer(DoubleJumpPacket.TYPE, DoubleJumpPacket.CODEC, DoubleJumpPacket::DoubleJump);
         registrar.playToServer(ResetDoubleJumpPacket.TYPE, ResetDoubleJumpPacket.CODEC, ResetDoubleJumpPacket::handle);
         registrar.playToServer(DoubleWalk.TYPE, DoubleWalk.CODEC, (packet, context) -> DoubleWalk.Double_Walk(context));
+        registrar.playToClient(DoubleWalkCooldownS2CPacket.TYPE, DoubleWalkCooldownS2CPacket.CODEC, DoubleWalkCooldownS2CPacket::handle);
 
 
     }

@@ -8,13 +8,13 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 import org.jetbrains.annotations.NotNull;
 
@@ -28,7 +28,7 @@ public record DoubleWalk() implements CustomPacketPayload {
 
     // 服务端冷却追踪（玩家UUID → 最后一次使用时的游戏刻）
     private static final Map<UUID, Long> COOLDOWNS = new ConcurrentHashMap<>();
-    private static final long COOLDOWN_TICKS = 80;// 4秒 * 20 tick/秒
+    private static final long COOLDOWN_TICKS = 60;// 3秒 * 20 tick/秒
 
     @Override
     public @NotNull Type<? extends CustomPacketPayload> type() {
@@ -52,11 +52,6 @@ public record DoubleWalk() implements CustomPacketPayload {
             long gameTime = player.level().getGameTime();
             Long lastUsed = COOLDOWNS.get(uuid);
             if (lastUsed != null && gameTime - lastUsed < COOLDOWN_TICKS) {
-                long remaining = COOLDOWN_TICKS - (gameTime - lastUsed);
-                player.displayClientMessage(
-                        Component.translatable("cooldown.anvilcraftportableaddon.blink", String.format("%.1f", remaining / 20.0f)),
-                        true
-                );
                 return;
             }
 
@@ -153,6 +148,8 @@ public record DoubleWalk() implements CustomPacketPayload {
 
             // 闪现成功后更新冷却
             COOLDOWNS.put(uuid, gameTime);
+            // 通知客户端开始冷却倒数
+            PacketDistributor.sendToPlayer(player, new DoubleWalkCooldownS2CPacket(gameTime + COOLDOWN_TICKS));
         });
     }
 }

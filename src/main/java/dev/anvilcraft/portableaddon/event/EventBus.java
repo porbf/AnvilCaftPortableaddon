@@ -32,6 +32,10 @@ public class EventBus {
     private static Holder<Enchantment> doubleJumpHolder = null;
     private static Holder<Enchantment> doubleWalkHolder = null;
 
+    // Double_Walk 客户端冷却追踪（服务端同步）
+    private static long doubleWalkCooldownEnd = 0;
+    private static final long COOLDOWN_DISPLAY_EXTRA = 4; // 冷却结束后额外显示 0.2 秒（4 tick）
+
     private static void ensureHolders() {
         if (doubleJumpHolder != null) return;
         var player = Minecraft.getInstance().player;
@@ -39,6 +43,13 @@ public class EventBus {
         var enchantments = player.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
         doubleJumpHolder = enchantments.getOrThrow(EnchantmentEffects.DOUBLE_JUMP);
         doubleWalkHolder = enchantments.getOrThrow(EnchantmentEffects.DOUBLE_WALK);
+    }
+
+    /**
+     * 由 {@link dev.anvilcraft.portableaddon.network.DoubleWalkCooldownS2CPacket} 调用，同步服务端冷却结束时间
+     */
+    public static void onDoubleWalkCooldownUpdate(long endTime) {
+        doubleWalkCooldownEnd = endTime;
     }
 
     @SubscribeEvent
@@ -69,6 +80,19 @@ public class EventBus {
         prevBlinkDown = isBlinkDown;
         wasOnGround = isOnGround;
         wasOnFly = isOnFly;
+
+        // Double_Walk 冷却动态倒数显示
+        long gameTime = player.level().getGameTime();
+        if (doubleWalkCooldownEnd > 0 && gameTime <= doubleWalkCooldownEnd + COOLDOWN_DISPLAY_EXTRA) {
+            long remaining = doubleWalkCooldownEnd - gameTime;
+            float remainingSeconds = Math.max(0, remaining) / 20.0f;
+            player.displayClientMessage(
+                    Component.translatable("cooldown.anvilcraftportableaddon.blink", String.format("%.1f", remainingSeconds)),
+                    true
+            );
+        } else if (doubleWalkCooldownEnd > 0) {
+            doubleWalkCooldownEnd = 0; // 冷却显示结束，清除状态
+        }
     }
 
     private static void TryJump(boolean isJumpDown, boolean isOnFly, ItemStack boots, LocalPlayer player, Boolean canJump) { //尝试进行跳跃
@@ -110,6 +134,11 @@ public class EventBus {
                     && legs.getEnchantmentLevel(doubleWalkHolder) > 0//具有附魔
             ) {
                 if (player.hurtTime > 0) return;
+
+                // 客户端侧冷却检查，避免发送多余的数据包
+                if (doubleWalkCooldownEnd > 0 && player.level().getGameTime() < doubleWalkCooldownEnd) {
+                    return;
+                }
 
                 // 发送闪现数据包到服务端，由服务端管理冷却
                 PacketDistributor.sendToServer(new DoubleWalk());
