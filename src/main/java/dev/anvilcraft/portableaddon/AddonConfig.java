@@ -6,13 +6,11 @@ import dev.anvilcraft.lib.v2.config.Config;
 
 @Config(name = AnvilcraftPortableAddon.MOD_ID)
 public class AddonConfig {
-    @Comment("Whether to log the dirt block on common setup")
-    public boolean logDirtBlock = false;
+    @Comment("Teleport distance for the Double Walk enchantment (in blocks)\n雷行附魔的传送距离（以方块为单位）")
+    @BoundedDiscrete(min = 1.0, max = 30.0)
+    public double doubleWalkDistance = 5.0;
 
-    @Comment("A magic number")
-    @BoundedDiscrete(max = 24, min = 2)
-    public int magicNumber = 2;
-
-    @Comment("What you want the introduction message to be for the magic number")
-    public String magicNumberIntroduction = "";
+    @Comment("Power output for the Power Block\n能源方块的发电功率")
+    @BoundedDiscrete(min = 0, max = 32)
+    public int powerBlockOutput = 1;
 }
