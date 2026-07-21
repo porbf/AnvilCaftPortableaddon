@@ -1,5 +1,6 @@
 package dev.anvilcraft.portableaddon.init.blocks.PowerBlock;
 
+import dev.anvilcraft.portableaddon.Config;
 import dev.anvilcraft.portableaddon.init.AddonBlocks;
 import dev.dubhe.anvilcraft.api.power.IPowerProducer;
 import dev.dubhe.anvilcraft.api.power.PowerComponentType;
@@ -18,7 +19,7 @@ public class PowerBlockEntity extends BlockEntity implements IPowerProducer {
     public PowerBlockEntity(BlockPos pos, BlockState state) {
         super(AddonBlocks.APOWER_BE.get(), pos, state);
     }
-    @Override public int getOutputPower() { return 1; }
+    @Override public int getOutputPower() { return Config.POWER_BLOCK_OUTPUT.get(); }
     @Override public @NotNull PowerComponentType getComponentType() { return PowerComponentType.PRODUCER; }
     @Override public @NotNull BlockPos getPos() { return getBlockPos(); }
     @Override public @Nullable Level getCurrentLevel() { return level; }

@@ -1,6 +1,7 @@
 package dev.anvilcraft.portableaddon.network;
 
 import dev.anvilcraft.portableaddon.AnvilcraftPortableAddon;
+import dev.anvilcraft.portableaddon.Config;
 import dev.anvilcraft.portableaddon.enchantment.EnchantmentEffects;
 import net.minecraft.core.Holder;
 import net.minecraft.core.BlockPos;
@@ -55,7 +56,7 @@ public record DoubleWalk() implements CustomPacketPayload {
                 return;
             }
 
-            final double DISTANCE = 5.0;
+            final double DISTANCE = Config.DOUBLE_WALK_DISTANCE.get();
             final double MAX_PITCH = 60.0;     // 最大俯仰角（度），超过则无法传送
             final double MAX_VERTICAL = 3.0;    // 最大垂直位移
 

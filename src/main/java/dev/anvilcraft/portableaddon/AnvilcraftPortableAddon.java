@@ -20,6 +20,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -34,6 +35,7 @@ public class AnvilcraftPortableAddon {
     public static final Registrum REGISTRATE = Registrum.create(MOD_ID);
 
     public AnvilcraftPortableAddon(IEventBus modEventBus, ModContainer modContainer) {
+        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         modEventBus.addListener(this::commonSetup);
         LOGGER.info("Ciallo～(∠・ω< )⌒★");
 
@@ -64,7 +66,6 @@ public class AnvilcraftPortableAddon {
         if (event.getTabKey() == AddonItemGroups.ADDON_TAB.getKey()) {
             event.accept(AddonItems.Magnet);
             event.accept(AddonItems.POWER_BLOCK_ITEM);
-            event.accept(AddonItems.ENDERPOLE_ITEM);
 
             // 雷跃附魔书（可附魔在靴子上，实现二段跳）
             var holders = event.getParameters().holders();
