@@ -10,12 +10,10 @@ import dev.anvilcraft.portableaddon.init.AddonItemGroups;
 import dev.anvilcraft.portableaddon.init.AddonItems;
 import dev.anvilcraft.portableaddon.init.DataComponents;
 import dev.anvilcraft.portableaddon.network.Packets;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -53,11 +51,6 @@ public class AnvilcraftPortableAddon {
     private void commonSetup(FMLCommonSetupEvent event) {
         LOGGER.info("HELLO FROM COMMON SETUP");
 
-        if (CONFIG.logDirtBlock) {
-            LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-        }
-
-        LOGGER.info("{}{}", CONFIG.magicNumberIntroduction, CONFIG.magicNumber);
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
